@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수/ JavaScript_function</title>
+</head>
+<script>
+  //함수 ,익명함수, 화살표함수
+
+let i =0;//전역변수 이 변수를 없애면 첫번째myFunc()밑에 있는 애들이 먹통됨 자바스크립트 특징
+
+//myFunc() 호출
+
+function myFunc(){
+    let i= 0//지역변수
+    i++ 
+    document.write('Hello'+i,'<br/>');
+}
+
+//익명함수 함수를 가지고있는 변수로 부르지않고 함수로 호출해야함
+let theFunc = function(){
+    i++
+    document.write('JavaScript'+i,'<br/>')
+}
+myFunc()
+theFunc()
+theFunc()
+myFunc()
+
+
+</script>
+<body>
+    
+</body>
+</html>

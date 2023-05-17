@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array</title>
+    <script>
+      /* const fruits = ["apple", "strawberry", "mango", "melon"];
+      fruits[0] = "orange";
+      fruits.unshift("orange2"); //앞에 삽입
+      fruits.push("kiwi");
+      fruits[fruits.length] = "kiwi2"; //길이로 숫자 만들어서 삽입
+      fruits.shift();
+      fruits.pop();
+
+      //fruits.splice(2, 1); //인덱스 번호 2번부터 1개 삭제
+      let index = fruits.indexOf("mango"); //인덱스 번호 찾기
+      //fruits.splice(index, 1);
+      fruits.splice(index, 0, "kiwi"); //index부터 0개 삭제후 키위삽입
+
+      for (let i in fruits) {
+        document.write(fruits[i], "&nbsp;&nbsp");
+      }
+      document.write("<br/>");
+      for (let item of fruits) {
+        document.write(item, "&nbsp;&nbsp");
+      } */
+      //fruits[0] = "orange";
+
+      //--------------------------------
+      //''문자 배열처리 x/ "" 쌍따옴표 문자열 배열 가능
+      const str = "Hello, JavaScript!";
+      document.write(str, "<br/>");
+      document.write(str[4], "<br/>"); //문자열은 배열데이터
+      document.write(str[str.length - 1], "<br/>"); //index-1은 마지막 넘버링
+      str.push("~"); //문자열은 배열로 등록되는 데이터 이지만(for문 사용가능)/ 배열함수,메서드 사용불가(삽입,삭제)
+      document.write(str);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+   /* let input = confirm('정말 탈퇴하시겠습니까?');
+   if(input == true){
+    document.write('정상적으로 탈퇴 되었습니다');
+   }else{
+    document.write('다음에 다시 방문해주세요');
+   } */
+
+
+   /* let month = parseInt(prompt('몇 월 달인지 입력하세요'));
+   let season = '';
+
+   if(month ==3 || month == 4|| month == 5){
+    season = '봄';
+   } else if(month ==6 || month == 7|| month == 8){
+    season = '여름';
+   }else if(month ==9 || month == 10|| month == 11){
+    season = '가을';
+   }else if(month ==12 || month == 1|| month == 2){
+    season = '겨울';
+   } else{
+    season = '잘못된 값';
+   }
+
+   document.write(season +'입니다'); */
+
+   /* let price = parseInt(prompt('가격을 입력하세요'));
+   let sale =0 ;인가 영어로
+   let discount= 0;
+
+   if(price>=10000){
+    sale = price*0.1;
+   }else if(price>=5000){
+    sale = price*0.05;
+   }else if(price>=3000){
+    sale = price*0.03;
+   }else if(price>=1000){
+    sale = price*0.01;
+   }else(sale=0);
+
+   discount= price-sale;
+
+   document.write('할인된 가격'+discount+'<br/>');
+   document.write('적정 가격'+price+'<br/>');
+   document.write('할인된 가격'+sale); */
+
+
+   let total = parseInt(prompt('합계 금액을 입력하세요'));
+   let grade = '';
+   let benefit = '';
+/*
+   if(total>=300000){
+    grade = '골드',benefit='10%추가 적립혜택';
+   } else if(total>=200000){
+    grade='실버',benefit='5%추가 적립혜택';
+   }else if(total>=100000){
+    grade='브론즈',benefit='3%추가 적립혜택';
+   }else{
+    grade='새싹',benefit='분발하세용';
+   }
+
+   document.write('당신의 회원등급은 '+ grade + '입니다'+'<br/>');
+   document.write(benefit); */
+
+   if(total>=300000){
+    grade = '골드';
+   } else if(total>=200000){
+    grade='실버';
+   }else if(total>=100000){
+    grade='브론즈';
+   }else{
+    grade='새싹';
+   }
+   if(grade == '골드'){
+    benefit='10% 추가 적립혜택';
+   }else if(grade == '실버'){
+    benefit='5%추가 적립혜택';
+   }else if(grade=='브론즈'){
+    benefit='3% 추가 적립 혜택';
+   }else(benefit='분발하세용');
+
+   document.write('당신의 회원등급은 '+ grade + '입니다'+'<br/>');
+   document.write(benefit);
+
+
+   
+
+</script>
+<body>
+    
+</body>
+</html>

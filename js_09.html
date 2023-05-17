@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script>
+       
+       /* const id = 'green';
+       const pw = 1234;
+
+       let userId = prompt('아이디 입력');
+       let userPw = parseInt(prompt('비밀번호 입력'));
+
+       if(userId === id){
+        if(userPw === pw){
+            alert('로그인');
+        }else{
+            alert('비밀번호오류');
+        }
+       }else{
+        alert('아이디 오류');
+       } */
+
+
+//숫자3개 비교
+       /* let a = parseInt(prompt('첫번째 숫자입력'));
+        let b = parseInt(prompt('두번째 숫자입력'));
+        let c = parseInt(prompt('세번째 숫자입력'));
+
+        let max = 0;
+        let med = 0;
+        let min = 0;
+
+        if(a>b&&a>c){
+            if(b>c){
+                max=a;
+                med=b;
+                min=c;
+            }else{
+                max=a;
+                med=c;
+                min=b;
+            }
+        }else if(b>a&&b>c){
+            if(a>c){
+                max=b;
+                med=a;
+                min=c;
+            }else{
+                max=b;1
+                med=c;
+                min=a;
+            }
+        }else if(c>a&&c>b){
+            if(a>b){
+                max=c;
+                med=a;
+                min=b;
+            }else{
+                max=c;
+                med=b;
+                min=a;
+            }
+        }else{
+            alert('오류');
+        }
+    document.write(('맥스는'),max,('메디안은'), med, ('미니멈은'),min);
+ */
+
+
+
+ 
+       /* let menu =prompt('메뉴선택:pizza(p),spaghetti(s),risotto(r),drink(d)')
+
+       switch(menu){
+        case 'p':
+        case 'P':
+        document.write('Pizza 주문'); break;
+        case 's':
+        case 'S':
+            document.write('spaghetti 주문'); break;
+        case 'R':
+        case 'r':
+            document.write('risotto 주문'); break;
+        case 'D':
+        case 'd':
+            document.write('drink 주문'); break;
+
+        default:
+        document.write('메뉴에 없는 음식입니다.');    
+            
+        
+       } */
+
+      /*  let sum =256;
+
+       let ave = parseInt(sum/3);
+
+       let result = Math.floor(ave/10);//floor: 내림함수
+
+       switch(result){
+        case 10:
+        case 9:
+        document.write('A');break;
+        case 8:
+        document.write('B');break;
+        case 7:
+        document.write('C');break;
+        case 6:
+        document.write('D');break;
+        default:
+        document.write('F');
+       } */
+
+       //사칙연산 프로그램
+       /* let a = parseInt(prompt('첫번째수'));
+       let b = parseInt(prompt('두번째수'));
+       let c = prompt('+,-,/,*');
+
+       let d = a + b
+       let e = a - b
+       let f = a * b
+       let g = a / b
+      
+       switch(c){
+        case '+':
+        alert('합은'+d);break;
+        case '-':
+        alert('뺀값은'+e);break;
+        case '*':
+        alert('곱은'+f);break;
+        case '/':
+        alert('나누기값은'+Math.floor(g));break;
+        default:
+        alert('오류');
+       } */
+
+       /* let site = prompt('이동할 사이트명 입력: naver, daum, google, nate중 선택')
+
+       let url ;
+
+       switch(site){
+        case 'naver': url='www.naver.com'; break;
+        case 'daum': url ='www.daum.com'; break;
+        case 'nate': url = 'www.nate.com'; break;
+        case 'google': url = 'www.google.com'; break;
+        default:
+        alert('보기에 없는 포털 사이트입니다');
+       }
+       
+       if(url) {
+        location.href = 'http://' + url;
+       } */
+
+
+     //남자이면 군필미필 나누고 여자는 그냥 그외 오류답안은 오류라고 출력
+     
+     /* let num = prompt('주민등록번호7자리 입력','961023-1');
+     let result = num.substr(7,1);
+     let man = '';
+
+     if(result == 1 || result == 3){
+        man = confirm('군필이면 확인 아니면 취소')
+        if(man == true){
+            alert('진짜 사나이')
+        }else{
+            alert('가짜사나이')
+        }
+     }else if(result == 2|| result == 4){
+        alert('여성')
+     }else{
+        alert('오류')
+     } */
+
+     //지역명 입력하면 지역번호 알려주는 프로그램
+
+    /*  let a = prompt('지역명 입력');
+     let b = '';
+
+     switch(a){
+        case '서울':
+            b = '02';
+            alert(b);break;
+        case '경기':
+            b = '031';
+            alert(b);break;
+        case '부산':
+            b = '051';
+            alert(b);break;
+        case '대구':
+            b = '053';
+            alert(b);break;
+        case '인천':
+            b = '032';
+            alert(b);break;
+        case '강원':
+            b = '033';
+            alert(b);break;
+        case '광주':
+            b = '062';
+            alert(b);break;
+        case '대전':
+            b = '042';
+            alert(b);break;
+        case '울산':
+            b = '052';
+            alert(b);break;
+        case '전북':
+            b = '063';
+            alert(b);break;
+        case '전남':
+            b = '061';
+            alert(b);break;
+        case '제주':
+            b = '064';
+            alert(b);break;
+        default:
+            alert('오류')
+     } */
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

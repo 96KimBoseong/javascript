@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+/*         *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        } */
+        .box{
+            width: 300px;
+            height: 200px;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 200px;
+            display: none;
+            background-color: cadetblue;
+        }
+    </style>
+    <script>
+        function showbox(){
+            document.querySelector('.box').style.display = 'block'
+        }        
+        function hiddenbox(){
+            document.querySelector('.box').style.display = 'none'
+        }        
+    </script>
+</head>
+<body>
+    <button class="show_btb" onclick="showbox()">show</button>
+    <button class="hidden_btn" onclick="hiddenbox()">hidden</button>
+    <div class="box">Text_box</div>
+</body>
+</html>

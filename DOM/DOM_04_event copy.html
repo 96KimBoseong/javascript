@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+/*         *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        } */
+        .box{
+            width: 300px;
+            height: 200px;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 200px;
+            display: none;
+            background-color: cadetblue;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',() => {
+            const btn = document.querySelector('.btn')
+            const textBox = document.querySelector('.box')
+
+            let state = false //토글기능 넣으려고 만든 변수 
+
+            btn.addEventListener('click',() => {
+                if(!state){
+                    textBox.style.display ='block'
+                    state = true
+                }else if(state){
+                    textBox.style.display = 'none'
+                    state = false
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <button class="btn">click</button>
+    <div class="box">Text_box</div>
+</body>
+</html>

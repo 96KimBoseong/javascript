@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>object</title>
+    <script>
+      /* const today = new Date(); //날짜
+      const startDay = new Date("2022-12-30");
+
+      document.write(today, "<br/>");
+
+      const passDay = today - startDay;
+
+      document.write(passDay, "<br/>");
+      //const day = Math.ceil(passDay / (1000 * 60 * 60 * 24));
+      //Math.floor  내림 Math.ceil 올림 Math.round 반올림
+
+      const day = Math.round(passDay / (1000 * 60 * 60 * 24));
+
+      document.write(day, "<br/>"); */
+      /////////////////////////////////////////////////////
+      const today = new Date();
+      const hundredDay = today.getTime() + 100 * 1000 * 60 * 60 * 24;
+
+      const someDay = new Date(hundredDay);
+
+      document.write(today, hundredDay, someDay, "<br/>");
+
+      const someYear = someDay.getFullYear();
+      const someMonth = someDay.getMonth() + 1;
+      const someDate = someDay.getDate();
+      const day = someDay.getDay();
+      let dayName = "";
+
+      document.write(someYear, "<br/>");
+      document.write(someMonth, "<br/>");
+      switch (day) {
+        case 0:
+          dayName = "월요일";
+          break;
+        case 1:
+          dayName = "화요일";
+          break;
+        case 2:
+          dayName = "수요일";
+          break;
+        case 3:
+          dayName = "목요일";
+          break;
+        case 4:
+          dayName = "금요일";
+          break;
+        case 5:
+          dayName = "토요일";
+          break;
+        case 6:
+          dayName = "일요일";
+          break;
+      }
+      const setDay = new Date(today, setFullyear("2025"));
+      document.write(setDay);
+      /////////////////////////////////////////
+      /* let num = 0;
+      for (let i = 0; i <= 10; i++) {
+        num = Math.random() * (10 - 1) + 1;
+        num = Math.ceil(num);
+        document.write(num, "<br/>");
+      } */
+      //
+      //
+      //객체 :속성,메서드
+      //키:키값 = 객체명['키'] or 객체명.키
+      //메서드 : 함수 형태의 객체 데이터
+
+      /* const student = {
+        name: "홍길동",
+        class: "3-1",
+        kor: 100,
+        eng: 95,
+      };
+      document.write(student["name"], "<br/>");
+      document.write(student.class, "<br/>");
+
+      student.math = 80;
+      //arr[5] =10 처럼 사용가능
+
+      document.write(student.math, "<br/>");
+
+      let sum = student.kor + student.eng + student.math;
+      document.write(`sum = ${sum}<br/>`);
+
+      //delete student.kor;
+      //document.write(`kor = ${kor}<br/>`);
+      //document.write(student, "<br/>");
+      document.write(JSON.stringify(student));
+      console.log(JSON.stringify(student, null, 2)); */
+    </script>
+  </head>
+  <body></body>
+</html>

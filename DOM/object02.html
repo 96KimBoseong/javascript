@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script>
+      /* const classInfo = {
+        name: "Front_End",
+        hours: 8,
+        days: 185,
+        Info: function () {
+          document.write(`${this.name}클래스는 하루${this.hours}시간,${this.days}일 과정입니다`);
+        },
+      };
+      classInfo.Info(); */
+      //////
+      /* const tv = {
+        name: "samsung",
+        width: "30cm",
+        height: "25cm",
+        weight: "20kg",
+        color: "black",
+        on: function (start) {
+          document.write(`${tv.name}tv를 ${start}됩니다<br/>`);
+        },
+        useTv: function (time) {
+          document.write(`현재 시간은${(time = new Date())}시 입니다 <br/>`);
+        },
+        off: function (time, end) {
+          document.write(`${tv.color}인 tv는${time}에 ${end}됩니다`);
+        },
+      };
+      tv.on("시작");
+      let cnt = 0;
+      let useTime = setInterval(() => {
+        tv.useTv(cnt);
+        cnt++;
+      }, 1000);
+      setTimeout(() => {
+        tv.off("오후10시", "종료");
+        clearInterval(useTime);
+      }, 5000); */
+      /////
+      /* function classInfo(name, hours, days) {
+        this.name = name;
+        this.hours = hours;
+        this.days = days;
+        //입력받은 데이터를 객체로 등록
+        this.info = function () {
+          document.write(`${this.name}클래스는 하루 ${hours}시간${this.days}일 과정입니다<br/>`);
+        }; //객체 생성자 함수 정의
+      }
+      const subject01 = new classInfo("Front_End", 8, 100);
+      const subject02 = new classInfo("design", 8, 100);
+      const subject03 = new classInfo("UI/UX", 8, 100);
+
+      document.write(JSON.stringify(subject01, "<br/>"));
+
+      subject01.info();
+      subject02.info();
+      subject03.info();
+
+      const classList = [subject01, subject02, subject03];
+      //const classList = [두번 나누지말고 한번에 ];
+
+      classList.forEach((item) => {
+        item.info();
+      }); */
+      /////
+
+      /* const fruits = ["사과", "딸기", "망고", "오렌지"];
+
+      for (let fruit of fruits) {
+        document.write(fruit, "<br/>");
+      }
+
+      const sortFruits = fruits.sort().reverse; //내림차순 정렬
+
+      for (let fruit of fruits) {
+        document.write(fruit, "<br/>");
+      } */
+
+      ///
+
+      /* const fruits = [
+        {
+          name: "사과",
+          price: 3000,
+        },
+        {
+          name: "딸기",
+          price: 1000,
+        },
+        {
+          name: "망고",
+          price: 23232300,
+        },
+        {
+          name: "오렌지",
+          price: 100,
+        },
+      ]; */
+      //document.write(fruits[0].name);
+
+      //안댐const sortFruits = fruits.sort();
+      /*  const sortFruits = fruits.sort((itemA, itemB) => {
+        //return itemA.price - itemB.price; //숫자 정렬
+        return (itemA.price - itemB.price) * -1; //숫자 정렬
+      }); */
+
+      /* const sortFruits = fruits.sort((itemA, itemB) => {
+        if (itemA.name < itemB.name) {
+          return -1;
+        } else if (itemA.name > itemB.name) {
+          return 1;
+        } else {
+          return 0;
+        } //문자 정렬 작은걸 배열안 왼쪽으로 넘겨서 순서 정렬
+      });
+
+      for (let fruit of fruits) {
+        document.write(JSON.stringify(fruit), "<br/>");
+      } */
+      ////////////////
+
+      //////////////////lodash :유틸리티 라이브러리
+      //_.sortBy(object,'fieldName')
+      //_.sortBy(object,'[fieldName,fieldName]')
+      //_.sortBy(object).revers()
+      const fruits = [
+        {
+          id: 1,
+          name: "사과",
+          price: 700,
+        },
+        {
+          id: 2,
+          name: "딸기",
+          price: 500,
+        },
+        {
+          id: 3,
+          name: "망고",
+          price: 700,
+        },
+        {
+          id: 4,
+          name: "오렌지",
+          price: 500,
+        },
+      ];
+      //const sortFruits = _.sortBy(fruits, "name").reverse();
+      const sortFruits = _.sortBy(fruits, ["price", "name"]).reverse();
+      //기본순 정렬시 아이디 값이나 값을 줘서 정렬시킬 기준만큼 값을 줄것 아니면 답없음
+      for (let fruit of sortFruits) {
+        document.write(JSON.stringify(fruit), "<br/>");
+      }
+      /** ㅇㅇㄴㅁㅇ */
+    </script>
+  </head>
+  <body></body>
+</html>

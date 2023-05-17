@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동적구조생성</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        img{
+            display: block;
+            width: 100%;
+        }
+        .front{
+            font-size: 50px;
+            color: blue;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',() => {
+        let newDiv = document.createElement('div')
+        let newText = document.createTextNode('Hello,JavaScript')
+        newDiv.appendChild(newText)
+        document.body.appendChild(newDiv)
+
+        let attr = document.createAttribute('class')
+        attr.value = 'front'
+        newDiv.setAttributeNode(attr)
+        
+            /* newDiv.setAttribute('class','front')
+            //node에 속성추가
+            document.querySelector('.front').style.backgroundColor = 'yellow' */
+
+        })
+    </script>
+</head>
+<body>
+</body>
+</html>

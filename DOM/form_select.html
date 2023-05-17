@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form_select</title>
+    <script>
+      //console.log(document.selectForm.fruits.options[fruits.selectedIndex].value); 사용자가 선택한 것의 값을 콘솔창에서 보기
+      document.addEventListener("DOMContentLoaded", () => {
+        const fruits = document.selectForm.fruits;
+
+        fruits.addEventListener("change", function () {
+          document.getElementById("name").value = fruits.options[fruits.selectedIndex].innerText;
+          //alert(fruits.options[fruits.selectedIndex].innerText);
+        });
+
+        const family = document.getElementById("family");
+
+        /*    family.addEventListener("change", function () {
+          let options = this.options;
+          let index = options.selectedIndex;
+
+          location.href = options[index].value;
+        }); */
+
+        family.addEventListener("change", (event) => {
+          let options = event.currentTarget.options;
+          let index = options.selectedIndex;
+
+          location.href = options[index].value;
+        });
+      });
+    </script>
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="" name="selectForm">
+        <fieldset>
+          <legend>좋아하는것들</legend>
+          <ul>
+            <li>
+              <label for="name">이름:</label>
+              <input type="text" id="name" />
+            </li>
+            <li>
+              <label for="fruits">과일</label>
+              <select name="fruits" id="fruits">
+                <option value="">----선택----</option>
+                <option value="apple">사과</option>
+                <option value="grape">포도</option>
+                <option value="strawberry">딸기</option>
+                <option value="water">수박</option>
+                <option value="mango">망고</option>
+                <option value="dragon">용과</option>
+              </select>
+            </li>
+            <br />
+            <li>
+              <label for="family">패밀리 사이트</label>
+              <select name="family" id="family">
+                <option value="">----패밀리----</option>
+                <option value="http://www.naver.com">네이버</option>
+                <option value="http://www.nate.com">네이트</option>
+                <option value="http://www.google.com">구글</option>
+              </select>
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

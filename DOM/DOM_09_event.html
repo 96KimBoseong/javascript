@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainImg = document.querySelector('.main_img > img')
+            const thumbImg = document.querySelectorAll('.thumbnail_img > li')
+
+            for (let i in thumbImg) {
+                thumbImg[i].onclick = mainBox
+            }
+                function mainBox(){
+                    
+                    let imgSrc = this.children[0].src
+                    mainImg.setAttribute('src', imgSrc)
+                }
+                /*  for(let i=0; i<thumbImg.length; i++){
+                thumbImg[i].addEventListener('click',function(){
+                    mainImg.src =this.children[0].src
+                    //this쓸꺼면 화살표 함수 못씀 
+                })
+                
+클래스
+
+함수는 기능을 포장하는 기술 이라면 클래스는 그렇게 만들어진 변수와 함수 중 연관있는 변수와 함수를 선별해 포장하는 기술.
+
+포장하는 이유는 객체 단위로 코드를 그룹화하고 재사용하기 위함.
+
+
+
+
+
+인스턴스
+
+클래스를 사용하려면 일반적으로 인스턴스를 생성해서 사용.
+
+한 페이지 내에 두개 이상의 같은 동작을 하는 UI를 만들경우 두개의 클래스를 만드는 것이 아니라 하나의 클래스를 만든 후 두개의 인스턴스를 만들어 사용.
+
+
+
+
+
+객체
+
+객체라는 용어는 인스턴스의 다른 말 (두 용어 모두 클래스의 실체를 나타냄.)
+
+명확히 구분해서 설명하면 인스턴스 라는 용어는 new 키워드를 이용해 클래스의 실체를 생성할 때 주로 사용하며 객체라는 용어는 인스턴스 생성 후 클래스 에서 제공하는 프로퍼티와 메서드를 사용할 때 주로 사용.
+
+
+
+
+
+프로퍼티(property)
+
+클래스 내부에 만드는 변수를 프로퍼티 라고 부름. (멤버변수 라고도 함)
+
+프로퍼티에는 주로 객체 내부에서 사용하는 일반적인 정보와 객체 내부 함수(메서드) 에서 처리한 결과값이 저장.
+
+
+
+
+
+메서드(method)
+
+클래스에 만드는 함수를 메서드 라고 부르며 멤버함수 라고도 부름.
+
+메서드는 주로 객체의 프로퍼티 값을 변경하거나 알아내는 기능과 클래스를 대표하는 기능이 담기게 됨.
+            } */
+        })
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        .container {
+            width: 500px;
+        }
+
+        .thumbnail_img {
+            display: flex;
+            width: 500px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <h2>Front_End</h2>
+        <div class="main_img">
+            <img src="./images/bx_img01.jpg" alt="main_img">
+        </div>
+
+
+        <ul class="thumbnail_img">
+            <li><img src="./images/bx_img01.jpg" alt="bx_img01"></li>
+            <li><img src="./images/bx_img02.jpg" alt="bx_img02"></li>
+            <li><img src="./images/bx_img03.jpg" alt="bx_img03"></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

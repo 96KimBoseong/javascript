@@ -1,0 +1,31 @@
+VM276:1 Uncaught ReferenceError: jQuery is not defined
+    at <anonymous>:1:1764
+(익명) @ VM276:1
+document.querySelector('#user_id);
+VM295:1 Uncaught SyntaxError: Invalid or unexpected token
+Document.forms
+undefined
+document.forms
+HTMLCollection [form, login: form]0: formlogin: formlength: 1[[Prototype]]: HTMLCollection
+document.querySelector('#user_id)
+VM493:1 Uncaught SyntaxError: Invalid or unexpected token
+document.forms
+HTMLCollection [form, login: form]0: formlogin: formlength: 1[[Prototype]]: HTMLCollection
+doc
+VM545:1 Uncaught ReferenceError: doc is not defined
+    at <anonymous>:1:1
+(익명) @ VM545:1
+document.forms[0].elements
+HTMLFormControlsCollection(3) [input#user_id.user_id, input#user_pw.user_pw, button.log_btn, user_id: input#user_id.user_id, user_pw: input#user_pw.user_pw]0: input#user_id.user_id1: input#user_pw.user_pw2: button.log_btnuser_id: input#user_id.user_iduser_pw: input#user_pw.user_pwlength: 3[[Prototype]]: HTMLFormControlsCollection
+document.forms[0].elements{0}
+VM886:1 Uncaught SyntaxError: Unexpected token '{'
+document.forms[0].elements[0]
+<input type=​"text" name=​"user_id" id=​"user_id" class=​"user_id" placeholder=​"아이디입력" required autofocus>​
+document.forms[0].elements[0].value
+'green'
+document.forms['login'].elements['user_id'].value
+'green'
+document.login.user_id.value
+'green'
+document.querySelector('#user_id')
+<input type=​"text" name=​"user_id" id=​"user_id" class=​"user_id" placeholder=​"아이디입력" required autofocus>​

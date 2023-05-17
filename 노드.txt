@@ -1,0 +1,29 @@
+노드: 객체화된 각 요소들
+요소노드 : html태그
+텍스트노드 : 요소노드 안에 있는 글자
+
+문서객체
+적정문서객체 :웹 문서를 로드하면서 html 문서에 있는 구성요소들을 읽으며 객체생성
+동적문서객체:자바스크립트로 html 문서에 없던 문서객체를 생성 
+
+parcel-bundler = 빌드전 동적파일 빌드후 정적파일로 변환 해야 보임
+
+텍스트 노드를 가지는 문서객체를 생성(메서드)
+createElement()요소 노드 생성
+createTextNode() 텍스트노드 생성
+createChild ?
+
+직접선택자 /인접관계선택자
+document.getElementByid('id')/parentNode
+document.formName.inputName(폼요소 안에 name속성을 부여해 선택)
+getElement.ByTagName
+
+자바스크립트는 기호 사용불가 음수값 줄때 200 * -1 로
+
+요소선택.getAttribute('속성') 지정한 속성값 호출
+요소선택.setAttribute('속성,새값) 지정한 속성값을 새 값으로 변경 또는 생성
+
+
+selectedIndex !!!
+
+input type = 'text' disabled == 입력요소 속성변경

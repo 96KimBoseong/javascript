@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수/ JavaScript_function</title>
+</head>
+<script>
+  //함수 ,익명함수, 화살표함수
+
+//let i =0;//전역변수 이 변수를 없애면 첫번째myFunc()밑에 있는 애들이 먹통됨 자바스크립트 특징
+
+//myFunc() 호출
+
+/* function myFunc(){
+    let i= 0//지역변수
+    i++ 
+    document.write('Hello'+i,'<br/>');
+} */
+
+//익명함수 함수를 가지고있는 변수로 부르지않고 함수로 호출해야함
+/* let theFunc = function(){
+    i++
+    document.write('JavaScript'+i,'<br/>')
+}
+myFunc()
+theFunc()
+theFunc()
+myFunc()
+ */
+
+
+ /* function add(a,b){
+    let result = a+b
+    document.write('add='+result+'<br/>')
+ }
+
+ function subject(x,y){
+    let result = x-y
+    document.write('subject='+result+'<br/>')
+ }
+    let num1 =parseInt(prompt('첫 번째 수'))
+    let num2 =parseInt(prompt('두 번째 수'))
+
+ add(num1,num2)
+ subject(num1,num2) */
+
+ /* function add(a,b){
+    let result = a+b
+    return result // 호출한곳으로 돌아가라
+ }
+ let num1 =10
+ let num2 = 5
+
+ let resultAdd = add(num1, num2)
+ document.write('add=',resultAdd) */
+
+
+//이탈리안 메뉴 주문 함수를 작성하고 3명의 음식을 주문하는 프로그램을 함수안에서 주문받기 
+    
+/* function order(){
+    let menu1 = prompt('메뉴를 입력하세요 1');
+    let menu2 = prompt('메뉴를 입력하세요 2');
+    let menu3 = prompt('메뉴를 입력하세요 3');
+    
+    let total ='주문하신 메뉴는'+ menu1+','+menu2+','+menu3+'입니다.'
+    return total
+}
+
+let totalMenu = order()
+
+document.write(totalMenu) */
+
+
+
+
+
+
+
+// 두개의 정수를 입력받아 두수중 큰수를 출력하는 함수프로그램 작성 *조건 max함수정의-무한으로 받을수있게 만들고 3번째에서 브레이크
+
+
+
+// 제품명 / 가격,수량을 입력받고 총구입가격을 제품명과 함꼐 출력 total function을 만들고 함수를호출하면 결과값만 return으로 돌려주기
+
+//return 은 여러개 중복이 불가하고 return밑에있는 문장은 실행되지 않는다
+//var는 함수블럭안에서 지역변수 for등등 블럭 안에서 나타나는 변수는 전역변수로 취급함
+</script>
+<body>
+    
+</body>
+</html>

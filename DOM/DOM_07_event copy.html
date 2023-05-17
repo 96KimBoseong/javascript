@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세설명</title>
+    <style>
+        .container{
+            width: 500px;
+        }
+        .container img{
+            display: block;
+            width: 100%;
+        }
+        .detail{
+            display: none;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',() => {
+         const btn = document.querySelector('.btn')
+         const detailBox = document.querySelector('.detail')
+        // status = false
+        let isOpen = false
+        btn.onclick = showHide
+
+        function showHide(){
+            if(!isOpen){
+                detailBox.style.display = 'block'
+                btn.innerText = '상세설명닫기'
+                isOpen = true
+            }else{
+                detailBox.style.display = 'none'
+                btn.innerText = '상세설명보기'
+                isOpen = false
+            } 
+        }
+        })
+    </script>
+</head>
+<body>
+   <div class="container">
+    <img src="./images/bx_img01.jpg" alt="detail_img">
+    <button class="btn">상세설명보기</button>
+    <div class="detail">
+        <h3>Front_End</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe veritatis explicabo facere dolorem, velit sequi totam ab placeat, repudiandae, consequatur quidem eum officiis possimus. Quasi voluptates a in nesciunt qui atque nostrum eligendi minima eum voluptatum corporis aliquam, temporibus dolore saepe similique! Itaque dolores maxime ipsum nesciunt laudantium, laborum, odio reprehenderit, cupiditate possimus tempora voluptatibus incidunt quasi voluptatum sunt voluptate. Voluptatibus sequi ipsa, quam veniam minima deleniti reprehenderit vel reiciendis dolor. Autem rem nulla error provident iste quod possimus cupiditate corrupti temporibus. Voluptatem quia, odit reprehenderit ratione, totam exercitationem dolor unde aut consectetur, harum ut nobis facere laudantium odio porro.</p>
+        
+    </div>
+   </div>
+</body>
+</html>

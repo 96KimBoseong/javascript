@@ -1,0 +1,64 @@
+ <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+/*         *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        } */
+    </style>
+    <!-- <script src="./main.js" defer> -->
+        <!-- defer 중요 지연스크립트 -->
+    </script>
+    <script>
+        //window.onload = 윈도우 최상위 객체가 노드를 모두 읽고 로딩되었다면 실행 
+        /* window.onload =function(){
+        document.getElementById('box01').style.color = 'blue';
+        } */
+        document.addEventListener('DOMContentLoaded',function(){
+            document.getElementById('box01').style.color ='red'
+            document.getElementById('box01').style.fontSize = '24px'
+            document.getElementById('box01').style.fontWeight = 'bold'
+
+            document.getElementsByClassName('box02')[0].style.color ='blue'
+            //getElements = 배열로 받아쓴다 []배열 넘버 안넣으면 실행안됨
+            document.getElementsByTagName('li')[1].style.color = 'red'
+            document.querySelector('#box01').style.backgroundColor = '#ccc'
+            //querySelector는 #/. 써줘야함 getElements잘 안씀
+            document.querySelector('.box02').style.fontSize = '50px'
+            document.querySelectorAll('.box03 li')[0].style.backgroundColor = 'yellow'
+            //querySelector= 단일 클래스 querySelectorAll = 클래스명이 같을때 배열로 골라서 선택 ex(box01,box02
+            const li = document.querySelectorAll('.box03 li')
+            for(let i=0; i<li.length; i++){
+                li[i].style.fontSize ='20px'
+            }
+
+            li.forEach((value) => {
+                value.style.color ='blue'  
+            })
+            
+        })
+    </script>
+</head>
+<body>
+    
+    <div id="box01">Text_box01</div>
+    <p class="box02">Text_box02</p>
+    <ul class="box03">
+        <li>Text_box03_1</li>
+        <li>Text_box03_2</li>
+        <li>Text_box03_3</li>
+    </ul>
+    <!-- <script>
+        document.getElementById('box01').style.color = 'red';
+        //코드는 위에서 아래서 읽음
+    </script> -->
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To_Do_List</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',() => {
+
+            document.querySelector('.add_btn').addEventListener('click',function(){
+
+                const subject = document.querySelector('.subject')
+                const subjectList = document.querySelector('.subject_list')
+
+                let newP = document.createElement('p')
+                let newText = document.createTextNode(subject.value)
+
+                newP.appendChild(newText)
+                //document.body.appendChild(newP)
+                //여기까지하면 텍스트 추가되고 삭제됨 버튼타입주기
+                //subjectList.appendChild(newP)
+
+                let newSpan = document.createElement('span')
+                let spanText =document.createTextNode('x')
+                
+                newSpan.appendChild(spanText)
+                newP.appendChild(newSpan)
+
+                newSpan.setAttribute('class','delete')
+
+                
+                subjectList.insertBefore(newP, subjectList.children[0])
+                //추가시 위에서 부터 찍히게 (추가되는 노드, 기준 노드)
+                subject.value = ''
+                subject.focus()
+                //서브젝의 값을 초기화 시키고 다시 서브젝트의 포커스주기
+
+                let delBtn =document.querySelectorAll('.delete')
+
+                for(let i=0; i<delBtn.length; i++){
+                    delBtn[i].addEventListener('click',function(){
+                        //this.parentNode.parentNode.removeChild(this.parentNode)
+                        if(delBtn[i].parentNode.parentNode){
+                            this.parentNode.parentNode.removeChild(this.parentNode)
+                        }
+                    })
+                }
+            })//add_btn_click_ev
+        })
+    </script>
+    <style>
+        .delete{
+            margin-left: 100px;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+        .delete:hover{
+            opacity: 1;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Front_End Subject List</h2>
+    </div>
+    <form action="">
+        <input type="text" class="subject" placeholder="과목이름" autofocus>
+        <button type="button" class="add_btn">추가</button>
+        <!-- 버튼에 타입줘야 이벤트 발생후 유지가능 -->
+    </form>
+
+    <hr>
+    <div class="subject_list">
+
+    </div>
+</body>
+</html>

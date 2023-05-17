@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form/login</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let itemList = [];
+        const item = document.querySelector(".item");
+        const addBtn = document.querySelector(".add_btn");
+        const itemBox = document.querySelector(".item_box");
+        /*   addBtn.addEventListener('click',function(){
+                addList()
+            }) */
+
+        addBtn.addEventListener("click", addList);
+        //콜백함수 식을 쓰지 않고 함수명을 바로 콜백함수 자리에 입력
+        function addList() {
+          if (item.value !== null) {
+            //itemList.push(item.value)
+            itemList.unshift(item.value);
+            item.value = "";
+            item.focus();
+          }
+          showList();
+        }
+
+        function showList() {
+          let list = "<ul>";
+
+          for (let i = 0; i < itemList.length; i++) {
+            //list += '<li>' + itemList[i]+ '</li>'
+            list +=
+              "<li>" +
+              itemList[i] +
+              '<span class ="delete" id= ' +
+              i +
+              ">x</span></li>";
+          }
+          list += "</ul>";
+
+          itemBox.innerHTML = list;
+
+          let remove = document.querySelectorAll(".delete");
+          for (let i = 0; i < remove.length; i++) {
+            remove[i].addEventListener("click", removeList);
+          }
+        }
+
+        function removeList() {
+          let id = this.getAttribute("id");
+          //getter 값을 얻을때
+          //setter 값을 지정할때
+          itemList.splice(id, 1);
+          showList();
+        }
+      });
+    </script>
+    <style>
+      .delete {
+        margin-left: 100px;
+        opacity: 0.5;
+        cursor: pointer;
+      }
+
+      .delete:hover {
+        opacity: 1;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Item List</h2>
+      <form action="">
+        <input type="text" class="item" autofocus />
+        <input type="button" class="add_btn" value="추가" />
+      </form>
+      <hr />
+      <div class="item_box"></div>
+    </div>
+  </body>
+</html>

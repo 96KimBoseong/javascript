@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function</title>
+    <script>
+      //scope:변수가 존재하는 범위 => const,let vs var
+      // 선언적함수
+      /*       function func() {
+        document.write("function_1", "<br/>");
+      }
+      func();
+      // 익명함수
+      const func01 = function () {
+        document.write("function02", "<br/>");
+      };
+      func01();
+      // 화살표함수 복잡한 구문을 생략하기 위해 만듬  익명함수가 화살표함수로 진화
+      const func02 = () => {
+        document.write("function03", "<br/>");
+      };
+      func02();
+
+      //단순함수 호출
+      function func() {
+        let a = 2;
+        let b = 3;
+        let add = a + b;
+        document.write(`add=${add}`); //템플릿 스트링 리터럴함수
+      }
+      func();
+      const func = () => {
+        let a = 4;
+        let b = 3;
+        let add = a + b;
+        document.write(`add=${add}`);
+      };
+      func();
+      //매개변수 전달 함수 호출
+      function func(a, b) {
+        let add = a + b;
+        document.write(`add=${add}`);
+      }
+      func(5, 7);
+
+      const func = (a, b) => {
+        let add = a + b;
+        document.write(`add=${add}`);
+      };
+      func(7, 7);
+
+      //리턴문이 있는 함수를 호출하는 방법
+      function func(a, b) {
+        let add = a + b;
+        return add;
+      }
+      let result = func(4, 7);
+      document.write(`add=${result}`);
+
+      const func = (a, b) => {
+        let add = a + b;
+        return a + b;
+      }; */
+      //화살표함수 안에서 실행문 이 하나도 없고 return문만 있다면 중괄호와 return문을 생략가능
+      /* const func = (a, b) => a + b;
+          let result = func(7, 7);
+           document.write(`add=${result}`); */
+
+      //최소값에서 최대값까지의 누적합 구하기
+
+      /*       function sum(a, b) {
+        let sum = 0;
+        for (let i = a; i <= b; i++) {
+          sum += i;
+          return sum;
+        }
+      }
+
+      let min = 1;
+      let max = 100;
+
+      let result = sum(min, max);
+      document.write(`${min}에서${max}까지의 합: ${result}`); */
+
+      //세수중 최대값 구하기
+      /* function max(a, b, c) {
+        let sum = 0;
+        if (a > b && a > c) {
+          sum = a;
+        } else if (b > a && b > c) {
+          sum = b;
+        } else if (c > a && c > b) {
+          sum = c;
+        }
+        return sum;
+      }
+
+      let result = max(5, 7, 3);
+      document.write(`max=${result}`); */
+
+      //정해진 배열 데이터에서 최대값 구하기
+      /* function max(array) {
+        let max = array[0];
+        for (let i in array) {
+          if (array[i] > max) {
+            max = array[i];
+          }
+        }
+        return max;
+        for (let value of array) {
+          if (value > max) {
+            max = value;
+          }
+        }
+        return max;
+      }
+      const numArray = [298, 3, 451, 43, 42, 2, 4, 67, 8];
+      document.write(`max=${max(numArray)}`); */
+      //정해지지않은 가변 데이터에서 최소값 구하기
+
+      //가변 매개변수 함수 = 나머지 함수
+      //function  func(...item) {}
+      /* function func(...items) {
+        document.write(items, "<br/>");
+        console.log(items, "<br/>");
+      }
+      func(1, 2);
+      func(1, 2, 3);
+      func(1, 2, 3, 4); */
+
+      /* function min(...items) {
+        let min = items[0];
+        for (let item of items) {
+          if (item < min) {
+            min = item;
+          }
+        }
+        return min;
+      }
+
+      document.write(min(12, 3, 241, 42, 4, 3, 2, 66)); */
+      /* function func(a, b, ...items) {
+        document.write(a, b, items, "<br/>");
+        console.log(a, b, items, "<br/>");
+      }
+      func(1, 2);
+      func(1, 2, 3);
+      func(1, 2, 3, 4); */
+
+      //기본매개변수 디폴트 매개변수 월급계산프로그램만들기할때 쓴다
+      /* function func(a, b = 2) {
+        document.write(`${a} and ${b}<br/>`);
+      }
+      func(1, 1, 2);
+      func(1);
+      func(); */
+
+      //하루수업시간 디폴트값 !
+      /* function studyTime(name, hour = 8, days = 5) {
+        document.write(`${name} 님의 수업시간 <br/>`);
+        document.write(`${hour} 하루 수업시간 <br/>`);
+        document.write(`${days} 주 수업일수 <br/>`);
+        document.write(`${hour * days} 주 수업시간 <br/>`);
+      }
+      studyTime("홍길동");
+      studyTime("홍길동", 2);
+      studyTime("홍길동", 5, 6); */
+
+      //비동기 프로그램 : 함수의 위치를 고정 할 필요가 없고 필요할때 중간에서 만들어서 사용가능
+
+      //콜백함수 :매개변수로 전달되는 함수
+      /* function func(callback) {
+        for (let i = 0; i <= 10; i++) {
+          callback(i);
+        }
+      }
+      function outPut(index) {
+        document.write(`${index}번째 <br/>`);
+      }
+      func(outPut);
+
+      func(function (index) {
+        document.write(`${index}번째 <br/>`);
+      }); //이 방법 안좋음
+ */
+      //배열함수 :forEach(),map(),filter()
+      //forEach(function(value,array)):단순히 배열내부 요소(콜백함수)를 사용
+      //const numbers = [23, 5, 52, 63, 43, 64, 23, 54];
+
+      /* numbers.forEach(function (value, index, array) {
+        document.write(`${value} - ${index}<br/>`);
+      }); */
+
+      /* numbers.forEach((value, index) => {
+        document.write(`${value} - ${index}<br/>`);
+      }); */
+      //map(): 콜백함수에서 리턴하는 값을 이용해 새로운 배열을 생성
+      //const numbers = [23, 5, 52, 63, 43, 64, 23, 54];
+
+      /* const = numbers_02 = numbers.map((value) => {
+          return value * 2; //numbers 배열 못바꿈
+        }); */
+      /* for (let number of numbers_02) {
+          document.write(`${numbers_02}<br/>`);
+        } */
+      //const numbers_02 = numbers.map((value) => value * 2);
+      /*  numbers_02.forEach((number) => {
+        document.write(`${number}<br/>`);
+      }); */
+
+      /* const numbers_02 = numbers
+        .map((value) => value * 2)
+        .forEach((number) => {
+          document.write(`${number}<br/>`);
+        }); */ //메서드 체이닝 어렵당..
+
+      //filter():콜백함수에서 리턴되는 값이 true인것을 배열로 생성
+      //return 문 뒤에 조건문 작성
+      /* const numbers = [23, 5, 52, 63, 43, 64, 23, 54];
+      const eventNumbers = numbers.filter((value) => {
+        return value % 2 === 0; //짝수찾기 return 뒤에만 가능 if문 이런거 안댐 map써야댐
+      });
+      eventNumbers.forEach((value) => {
+        document.write(`${value} <br/>`);
+      }); */
+      //타이머 함수
+      //setTimeout(함수,시간) : 특정 시간이 지난후에 함수를 한번 호출해서 실행
+      //setInterval (함수,시간): 특정시간 마다 함수를 호출해서 계속 반복 실행  멈춰줘야함
+      //clearInterval ():setInterval 실행을 멈춤
+
+      /* setTimeout(function () {
+        document.write(`1초후에 실행해라 <br/>`), 1000;
+      });
+      let cnt = 1;
+      let times = setInterval(function () {
+        document.write(`1초마다 실행해라<br/>`);
+        cnt++;
+        if (cnt === 0) clearInterval(times);
+      }, 1000); */
+
+      let cnt = 1;
+      let time = setInterval(() => {
+        document.write(`1초마다실행 -${cnt}<br/>`);
+        cnt++;
+      }, 1000);
+      setTimeout(() => {
+        document.write(`타이머종료`);
+        clearInterval(time);
+      }, 5000);
+    </script>
+  </head>
+
+  <body></body>
+</html>
