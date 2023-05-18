@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class</title>
+    <script>
+      //클래스 : 객체를 효율적으로 처리하기위한 방법
+      //배열: 객체 데이터를 다루기위한 방법
+      /* const students = [];
+
+      students.push({ name: "kim", kor: 100, eng: 95 });
+      students.push({ name: "lee", kor: 50, eng: 15 });
+      students.push({ name: "cho", kor: 30, eng: 25 });
+      let output = "name\t  total\t  average\n"; */
+      /* console.log(JSON.stringify(students, null, 2));
+
+      let output = "name\t total\t average\n";
+      //필드명 \백슬래시 이스케이프 문자= 상징기호t 는 탭 n은 줄바꾸기 수업마치고 확인 할것
+      for (let student of students) {
+        const sum = student.kor + student.eng;
+        const aver = sum / 2;
+        output += `${student.name}\t ${sum}\t ${aver}\n`;
+      }
+      console.log(output); */
+
+      //객체처리함수
+      /* function getSum() {
+        return student.kor + student.eng;
+      }
+      function getAver() {
+        return getSum(student) / 2;
+      }
+      for (let value of students) {
+        output += `${value.name}\t ${getSum(value)}\t ${getAver(value)}\n`;
+      }
+      console.log(output); */
+
+      //객체처리형: 객체 내부에서 선언 사용(객체멤버메서드)
+      //for 문 안에 student 라는 객체를 이용해서 function을 사용
+      /* for (let student of students) {
+        student.getSum = function () {
+          return this.kor + this.eng;
+        };
+        student.getAver = function () {
+          return this.getSum() / 2;
+        };
+      }
+      for (let value of students) {
+        output += `${value.name}\t  ${value.getSum()}\t  ${value.getAver()}\n `;
+      }
+      console.log(output); */
+
+      //객체생성자함수_ 객체 데이터 속성,메서드,객체 선언후 사용
+      /* function createStudents(name, kor, eng) {
+        return {
+          name: name,
+          kor: kor,
+          eng: eng,
+
+          getSum() {
+            return this.kor + this.eng;
+          },
+          getAver() {
+            return this.getSum() / 2;
+          },
+          toString() {
+            return `${this.name}\t ${this.getSum()}\t ${this.getAver()}\n`;
+          },
+        };
+      }
+      const students = [];
+      //const student01 = new createStudents('kim',100,95)
+      students.push(createStudents("kim", 100, 95));
+      students.push(createStudents("lee", 95, 65));
+      students.push(createStudents("park", 85, 25));
+
+      console.log(JSON.stringify(students, null, 2));
+      let output = `name\t total\t average\n`;
+
+      for (let student of students) {
+        output += student.toString();
+      }
+
+      console.log(output); */
+
+      //
+
+      //
+
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //클래스 생성자 함수, 속성
+      //class Student{} 클래스 생성자 함수선언 대문자
+      /* class Student {
+        // constructor(name,kor,eng) 구조를 이안에 넣음
+        constructor(name, kor, eng) {
+          this.name = name; //,안침 엔터 후 밑줄로 데이터가 아니고 대입해서 생성해주는 역할이기 때문에 콤마안씀
+          this.kor = kor;
+          this.eng = eng;
+        }
+        getSum() {
+          return this.kor + this.eng;
+        }
+        getAver() {
+          return this.getSum() / 2;
+        }
+        toString() {
+          return `${this.name}\t  ${this.getSum()}\t  ${this.getAver()} \n`;
+        }
+      }
+      const students = [];
+
+      students.push(new Student("kim", 100, 95));
+      students.push(new Student("lee", 20, 75));
+      students.push(new Student("cho", 50, 15));
+
+      console.log(JSON.stringify(students, null, 2));
+      let output = `name\t total\t average\n`;
+      for (let student of students) {
+        output += student.toString();
+      }
+      console.log(output); */
+      //
+      //
+      //class 상속 (Extends)
+      class Rectangle {
+        constructor(width, height) {
+          this.width = width;
+          this.height = height;
+        }
+        getPerimeter() {
+          return (this.width + this.height) * 2;
+        }
+        getArea() {
+          return this.width * this.height;
+        }
+      }
+
+      /* const rectangle = new Rectangle(10, 20);
+      document.write(`사각형의 둘레:${rectangle.getPerimeter()}\n`);
+      document.write(`사각형의 넓이:${rectangle.getArea()}\n`); */
+
+      /*  class Square{
+        constructor(length){
+            this.length =length
+        }
+        
+      } */
+      class Square extends Rectangle {
+        constructor(length, color) {
+          super(length, length);
+          this.color = color;
+        }
+        getColor() {
+          return `${this.color}인 정사각형`;
+        }
+      } //클래스 상속 자식은 부모를 절대 수정할수없다 리액트에서도 마찬가지 상속은 위에서 아래로
+
+      const square = new Square(40, red);
+      document.write(`정사각형의 둘레:${square.getPerimeter()}\n`);
+      document.write(`정사각형의 넓이:${square.getArea()}\n`);
+      document.write(`정사각형의 색상:${square.getColor()}\n`);
+    </script>
+  </head>
+  <body></body>
+</html>
