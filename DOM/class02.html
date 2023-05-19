@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class</title>
+    <script>
+      //예외처리
+      //exception(예외) or runtime error vs synTex error(문법오류)
+
+      //기본적인 예외처리
+      document.addEventListener("DOMContentLoaded", function () {
+        const h1 = document.querySelector("h1");
+        //h1.textContent = "Hello JavaScript";
+
+        /* if (h1) {
+          h1.textContent = "Hello JavaScript";
+        } else {
+          console.log("h1이 존재하지 않습니다");
+        } */
+
+        //try-catch-finally
+        /*
+      try{
+        예외가 발생할 가능성이 있는 코드
+      }catch(exception){
+        예외가 발생되었을때 실행할 코드
+      }finally{
+        무조건 실행되는 코드
+      }
+       */
+        /* try {
+        let a = 1;
+        let b = 2;
+        let add = a + b;
+        console.log(`sum =${sum}`);
+        console.log(`try구문`);
+      } catch (exception) {
+        console.log("catch 구문");
+      } finally {
+        console.log(`finally구문`);
+      } */
+        //
+
+        //
+        //throw:강제로 예외상황을 발생시킴
+
+        /* function test() {
+          try {
+            console.log(`try구문`);
+            throw "강제예외처리구문";
+          } catch (exception) {
+            console.log("catch구문");
+            return;
+          }
+          console.log("test()_End");
+        }
+        test(); */
+
+        //
+        //
+        //private 속성 : 사용자가 클래스에 속성이나 메서드를 의도하지 않는 방향으로 사용하게 되는 것을 방지하기 위한 방법이고 => 클래스의 안정성 유지
+
+        //
+
+        /* class Square {
+          constructor(length) {
+            if (length <= 0) {
+              throw "길이는 0보다 커야 합니다.";
+            }
+            this.length = length;
+          }
+          getPerimeter() {
+            return this.length * 4;
+          }
+          getArea() {
+            return this.length * this.length;
+          }
+        }
+
+        const square = new Square(10);
+        square.length = -10; //직접값을 변경 이방법 쓰면 안됨 생성자 함수로 만들어야함
+
+        //=> 외부에서 length의 속성을 변경을 해도 막을 수가 없다.
+        //=> private(#): constructor(속성선언) 외부에서 먼저 #으로 선언 해주고 내부에서 사용
+
+        document.write(`정사각형의 둘레 : ${square.getPerimeter()}<br/>`);
+        document.write(`정사각형의 넓이 :${square.getArea()}<br/>`);
+        document.write(`정사각형의 한변의 길이 :${square.length}<br/>`); */
+
+        ///private
+        /*         class Square {
+          #length;
+          constructor(length) {
+            if (length <= 0) {
+              throw "길이는 0보다 커야 합니다.";
+            }
+            this.#length = length;
+          }
+          getPerimeter() {
+            return this.#length * 4;
+          }
+          getArea() {
+            return this.#length * this.#length;
+          }
+        }
+        const square = new Square(10);
+        //square.length = -10;
+
+        document.write(`정사각형의 둘레 : ${square.getPerimeter()}<br/>`);
+        document.write(`정사각형의 넓이 :${square.getArea()}<br/>`);
+        document.write(`정사각형의 한변의 길이 :${square.length}<br/>`); */
+        //undefined 뜨는 이유는 private를 걸어놓으면 외부에서 값을 넣을 수도 알수도 없게 된다
+        ////////////////
+        //
+        //
+        //getter,setter 메서드 : private 로 선언된 속성과 속성을 사용하는 메서드는 외부에서 확인 및 수정이 불가능 => 가능하게 하는 것
+        class Square {
+          #length;
+
+          constructor(length) {
+            this.setLength(length);
+          }
+
+          setLength(value) {
+            if (value <= 0) {
+              throw "길이는 e보다 커야한다";
+            }
+            this.#length = value;
+          }
+          getLength(value) {
+            return this.#length;
+          }
+          getPerimeter() {
+            return this.#length * 4;
+          }
+          getArea() {
+            return this.#length * this.#length;
+          }
+        }
+
+        const square = new Square(10);
+        //square.length = -10;
+
+        document.write(`정사각형의 둘레 : ${square.getPerimeter()}<br/>`);
+        document.write(`정사각형의 넓이 :${square.getArea()}<br/>`);
+        document.write(`정사각형의 한변의 길이 :${square.getLength()}<br/>`);
+
+        //수정안함
+        square.setLength(40);
+        document.write(`정사각형의 둘레 : ${square.getPerimeter()}<br/>`);
+        document.write(`정사각형의 넓이 :${square.getArea()}<br/>`);
+        document.write(`정사각형의 한변의 길이 :${square.getLength()}<br/>`);
+
+        /* class Square {
+          #length;
+
+          constructor(length) {
+            this.#length = length; //생성자 함수를 통해 처리되는 속성값
+          }
+          set length(length) {
+            //생성자 함수를 통하지 않고 새로운 값이 입력될 경우 호출
+            if (length <= 0) {
+              throw "길이는 0보다 커야한다";
+            }
+            this.#length = length;
+          }
+          get length() {
+            return this.#length;
+          }
+          get perimeter() {
+            return this.#length * 4;
+          }
+          get area() {
+            return this.#length * this.#length;
+          }
+        }
+        const square = new Square(10);
+
+        document.write(`정사각형의 둘레 : ${square.perimeter}<br/>`);
+        document.write(`정사각형의 넓이 :${square.area}<br/>`);
+        document.write(`정사각형의 한변의 길이 :${square.length}<br/>`);
+        //square.length(40) 오류남 호출해서 사용하는게 아니라
+        square.length = 40; //소괄호로 ㄴㄴ
+        document.write(`정사각형의 둘레 : ${square.perimeter}<br/>`);
+        document.write(`정사각형의 넓이 :${square.area}<br/>`);
+        document.write(`정사각형의 한변의 길이 :${square.length}<br/>`); */
+        //
+
+        //오버라이드 (override):부모가 가지고 있는 함수를 상속받은 후 ,자식에서 다시 선언해서 덮어 씌우는 것
+        /* class Information {
+          constructor(name) {
+            this.name = name;
+          }
+          myHobby() {
+            document.write(`나${this.name}의 취미는 영화감상입니다.<br/>`);
+          }
+          myHealth() {
+            document.write(`나${this.name}은 건강합니다<br/><br/>`);
+          }
+        }
+
+        const info = new Information("홍길동");
+        info.myHealth();
+        info.myHobby();
+
+        class Child extends Information {
+          constructor(name, hobby, weight) {
+            super(name);
+
+            this.hobby = hobby;
+            this.weight = weight;
+          }
+          myHobby() {
+            document.write(`<br/><br/>나${this.name}의 취미는 ${this.hobby}입니다<br/>`);
+          }
+          myHealth() {
+            document.write(`나의 몸무게는 ${this.weight}로 건강합니다`);
+          }
+        }
+        const child = new Child("이순신", "독서", 50);
+        child.myHobby();
+        child.myHealth(); */
+      });
+    </script>
+  </head>
+  <body>
+    <!-- <h1></h1> -->
+  </body>
+</html>
