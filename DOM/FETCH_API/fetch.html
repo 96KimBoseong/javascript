@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fetch</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        /*
+           function testA() {
+             console.log('testA')
+           }
+       ​
+           // function testB() {
+           //   console.log('testB')
+           // }
+
+           function testB() {
+             setTimeout(() => {
+               console.log('testB')
+             }, 2000)
+           }
+       ​
+           function testC() {
+             console.log('testC')
+           }
+       ​
+           testA()
+           testB()
+           testC()
+       */
+        /*
+           function testA() {
+             console.log('testA')
+           }
+       ​
+           function testB(callback) {
+             setTimeout(() => {
+               console.log('testB')
+               callback()
+             }, 2000)
+           }
+           function testC() {
+             console.log('testC')
+           }
+           testA()
+           testB(testC)
+       */
+
+        /*
+           function order(coffee, callback) {
+             console.log(`${coffee} 주문확인중...`)
+             setTimeout(() => {
+               callback(coffee)
+             }, 3000)
+           }
+
+           function display(result) {
+             console.log(`${result} 주문접수`)
+           }
+       ​
+           order('아메리카노', display)
+       */
+
+        /*
+           let orderCoffee = false
+       ​
+           const coffee = new Promise((resolve, reject) => {
+             if(orderCoffee) {
+               resolve('커피 주문')
+             } else {
+               reject('커피 주문 안함')
+             }
+           })
+
+
+           coffee
+           .then((result) => {console.log(result)})
+           .catch(error => console.log(error))
+           .finally(() => console.log('End'))
+       */
+        /*
+           const coffee = () => {
+             return new Promise((resolve, reject) => {
+               resolve('커피를 주문합니다.')
+             })
+           }
+
+
+           const order = (message) => {
+             console.log(message)
+           }
+
+       ​
+           coffee()
+           .then(result => order(result))
+       */
+
+        /*
+           function testA() {
+             console.log('testA')
+             setTimeout(() => {
+               console.log('testB')
+               setTimeout(() => {
+                 console.log('testC')
+                 setTimeout(() => {
+                   console.log('testD')
+                   setTimeout(() => {
+                     console.log('Stop!!')
+                   }, 1000)
+                 }, 3000)
+               }, 1000)
+             }, 2000)
+           }
+
+       ​
+
+           testA()
+
+       */
+
+        /*
+
+           const stepA = (callback) => {
+
+             setTimeout(() => {
+
+               console.log('커피 주문 접수완료')
+
+               callback()
+
+             }, 2000)
+
+           }
+
+       ​
+
+           const stepB = (callback) => {
+
+             setTimeout(() => {
+
+               console.log('커피 컵 준비')
+
+               callback()
+
+             }, 1000)
+
+           }
+
+       ​
+
+           const stepC = (callback) => {
+
+             setTimeout(() => {
+
+               console.log('커피 내리기')
+
+               callback()
+
+             }, 3000)
+
+           }
+
+       ​
+
+           console.log('커피를 주문합니다.')
+
+           stepA(function() {
+
+             stepB(function() {
+
+               stepC(function() {
+
+                 console.log('커피가 준비되었습니다~')
+
+               })
+
+             })
+
+           })
+
+       */
+
+        /*  const coffee = () => {
+
+             return new Promise((resolve, reject) => {
+
+               resolve('커피를 주문합니다.')
+
+             })
+
+           }
+
+       ​
+
+           const stepA = (step) => {
+
+             console.log(step)
+
+             return new Promise((resolve, reject) => {
+
+               setTimeout(() => {
+
+                 resolve('커피 컵 준비')
+
+               }, 1000)
+
+             })
+
+           }
+
+       ​
+
+           const stepB = (step) => {
+
+             console.log(step)
+
+             return new Promise((resolve, reject) => {
+
+               setTimeout(() => {
+
+                 resolve('커피 내리기')
+
+               }, 3000)
+
+             })
+
+           }
+
+       ​
+
+           const stepC = (step) => {
+
+             console.log(step)
+
+             return new Promise((resolve, reject) => {
+
+               setTimeout(() => {
+
+                 resolve('커피 준비 완료')
+
+               }, 1000)
+
+             })
+
+           }
+
+       ​ */
+
+        /*
+
+           coffee()
+
+           .then(result => stepA(result))
+
+           .then(result => stepB(result))
+
+           .then(result => stepC(result))
+
+           .then(result => console.log(result))
+
+           .then(() => {
+
+             console.log('커피가 준비되었습니다~')
+
+           })
+
+       */
+
+        /*  ​
+
+           coffee()
+
+           .then(stepA)
+
+           .then(stepB)
+
+           .then(stepC)
+
+           .then(console.log)
+
+           .then(() => {
+
+             console.log('커피가 준비되었습니다.')
+
+           }) */
+
+        const order = new Promise((resolve, reject) => {
+          let coffee = prompt("어떤커피를 주문하시겠습니까");
+
+          if (coffee != null && coffee != "") {
+            document.querySelector(".start").innerText = `${coffee}주문접수`;
+            setTimeout(() => {
+              resolve(coffee);
+            }, 3000);
+          } else {
+            reject("커피를 주문하지 않음");
+          }
+        });
+      });
+      function display(result) {
+        document.querySelector(".end").textContent = `${result}준비완료`;
+        document.querySelector(".start").classList.add("active");
+        document.querySelector(".end").classList.add("stop");
+      }
+      function showErr(err) {
+        console.log(err);
+      }
+      order.then(display).catch(showErr);
+    </script>
+    <style>
+      .active {
+        text-decoration: line-through;
+        color: red;
+      }
+      .stop {
+        width: 300;
+
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="start"></div>
+    <div class="end"></div>
+  </body>
+</html>
