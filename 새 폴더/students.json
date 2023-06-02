@@ -1,0 +1,20 @@
+[
+  {
+    "name": "홍길동",
+    "major": "컴퓨터공학",
+    "img": "./images/bx_img01.jpg",
+    "grade": 2
+  },
+  {
+    "name": "김보성",
+    "major": "디지털디자인",
+    "img": "./images/bx_img02.jpg",
+    "grade": 1
+  },
+  {
+    "name": "이순신",
+    "major": "국어국문",
+    "img": "./images/bx_img03.jpg",
+    "grade": 4
+  }
+]

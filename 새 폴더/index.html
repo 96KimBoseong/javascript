@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XMLHttpRequest</title>
+    <script>
+      /* let student = {
+        name: "홍길동",
+        major: "컴퓨터 공학",
+        grade: 2,
+      }; */
+      //console.log(student);
+
+      //let json = JSON.stringify(student); 객체 데이터를 json데이터로 변경시켜준다 json데이터는 문자열이다 포맷형식이 콘솔창에 보기좋게 하나의 문자열로 표시됨
+      //let json = JSON.stringify(student);
+
+      //console.log(json);
+
+      //let student = '{"name":"이순신","major":"디지털디자인","grade":2}';
+      //json 데이터는 문자열 이기 때문에 string(문자열)처리 해야 오류가 안난다
+
+      //console.log(student);
+
+      //console.log(JSON.parse(student));
+      //json데이터를 객체데이터로 처리
+
+      /* let xhr = new XMLHttpRequest();
+        xhr.open("GET", "students.json");
+        xhr.send();
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            let student = JSON.parse(xhr.responseText);
+            //console.log(student);
+            document.getElementById("root").innerHTML = `
+            <h1>${student.name}<h1/>
+              <ul>
+                  <li>전공:${student.major}<li/>
+                  <li>학년:${student.grade}<li/>
+              <ul/>
+              `;
+          }
+        }; */
+
+      //모듈화
+      /* let xhr = new XMLHttpRequest();
+      xhr.open("GET", "students.json");
+      xhr.send();
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          let students = JSON.parse(xhr.responseText);
+          //console.log(students);
+          viewStudents(students);
+        }
+      };
+
+      function viewStudents(contents) {
+        let output = "";
+        for (let content of contents) {
+          output += `
+              <ul>
+                  <h3>${content.name}</h3>
+                  <li><img src='${content.img}''></li>
+                  <li>전공:${content.major}</li>
+                  <li>학년:${content.grade}</li>
+              </ul>
+              `;
+        }
+        document.getElementById("root").innerHTML = output;
+      } */
+
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://jsonplaceholder.typicode.com/users");
+      xhr.send();
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          let students = JSON.parse(xhr.responseText);
+          //console.log(student);
+          viewStudents(students);
+        }
+      };
+
+      function viewStudents(contents) {
+        let output = "";
+        for (let content of contents) {
+          output += `<ul>
+                <h3>${content.name}</h3>
+                <li>${content.username}</li>
+                <li>이메일:${content.email}</li>
+                <li>주소:${content.address.street}</li>
+            </ul>`;
+        }
+        document.getElementById("root").innerHTML = output;
+      }
+    </script>
+    <style>
+      .text {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
